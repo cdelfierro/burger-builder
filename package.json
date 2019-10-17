@@ -15,7 +15,8 @@
     "eject": "react-scripts eject"
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "all"
   },
   "eslintConfig": {
     "extends": [

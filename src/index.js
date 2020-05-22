@@ -7,9 +7,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const app = (
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
 );
 
 ReactDOM.render(app, document.getElementById('root'));

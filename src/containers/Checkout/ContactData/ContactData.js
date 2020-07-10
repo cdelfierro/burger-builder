@@ -60,7 +60,7 @@ class ContactData extends Component {
             { value: 'cheapest', displayValue: 'Cheapest' },
           ],
         },
-        value: '',
+        value: 'fastest',
         validation: {},
         valid: true,
       },
@@ -119,13 +119,13 @@ class ContactData extends Component {
   };
 
   render() {
-    const formElementArray = [];
+    const formElementsArray = [];
     for (let key in this.state.orderForm) {
-      formElementArray.push({ id: key, config: this.state.orderForm[key] });
+      formElementsArray.push({ id: key, config: this.state.orderForm[key] });
     }
     let form = (
       <form onSubmit={this.orderHandler}>
-        {formElementArray.map((formElement) => (
+        {formElementsArray.map((formElement) => (
           <Input
             key={formElement.id}
             elementType={formElement.config.elementType}
@@ -156,9 +156,9 @@ class ContactData extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    ings: state.ingredients,
-    price: state.totalPrice,
-    loading: state.loading,
+    ings: state.burgerBuilder.ingredients,
+    price: state.burgerBuilder.totalPrice,
+    loading: state.order.loading,
   };
 };
 
